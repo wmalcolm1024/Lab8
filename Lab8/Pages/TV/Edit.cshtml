@@ -1,0 +1,60 @@
+﻿@page
+@model Lab8.Pages.TV.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Shows</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Shows.Id" />
+            <div class="form-group">
+                <label asp-for="Shows.Name" class="control-label"></label>
+                <input asp-for="Shows.Name" class="form-control" />
+                <span asp-validation-for="Shows.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shows.ReleaseDate" class="control-label"></label>
+                <input asp-for="Shows.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Shows.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shows.Episode" class="control-label"></label>
+                <input asp-for="Shows.Episode" class="form-control" />
+                <span asp-validation-for="Shows.Episode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shows.Season" class="control-label"></label>
+                <input asp-for="Shows.Season" class="form-control" />
+                <span asp-validation-for="Shows.Season" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shows.Length" class="control-label"></label>
+                <input asp-for="Shows.Length" class="form-control" />
+                <span asp-validation-for="Shows.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shows.Rating" class="control-label"></label>
+                <input asp-for="Shows.Rating" class="form-control" />
+                <span asp-validation-for="Shows.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
